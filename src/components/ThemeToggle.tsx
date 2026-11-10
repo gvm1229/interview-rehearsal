@@ -1,4 +1,4 @@
-import {Moon,Sun} from 'lucide-react';
+import {Monitor,Moon,Sun} from 'lucide-react';
 import {useTheme} from 'next-themes';
 import {Button} from './ui/button';
 import {
@@ -22,9 +22,18 @@ export function ThemeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
-          <DropdownMenuRadioItem value="light">밝게</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="dark">어둡게</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="system">시스템 설정 따르기</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="light" className="gap-2">
+            <Sun aria-hidden="true" className="size-4 shrink-0"/>
+            밝게
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="dark" className="gap-2">
+            <Moon aria-hidden="true" className="size-4 shrink-0"/>
+            어둡게
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="system" className="gap-2">
+            <Monitor aria-hidden="true" className="size-4 shrink-0"/>
+            시스템 설정 따르기
+          </DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>

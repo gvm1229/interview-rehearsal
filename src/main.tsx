@@ -6,7 +6,7 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider attribute="class" defaultTheme="light" storageKey="interview-rehearsal-theme">
+    <ThemeProvider attribute="class" defaultTheme="system" storageKey="interview-rehearsal-theme">
       <App />
     </ThemeProvider>
   </StrictMode>,
