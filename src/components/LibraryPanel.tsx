@@ -4,6 +4,7 @@ import {initialSettings,languageLabels} from '../types';
 import {post,upload} from '../api';
 import {Button} from './ui/button';
 import {SettingsFields} from './SettingsForm';
+import {ThemeToggle} from './ThemeToggle';
 
 export function LibraryPanel({boot,onMount,onChanged,onClose}:{boot:Bootstrap;onMount:(id:string|null)=>Promise<void>;onChanged:()=>Promise<void>;onClose?:()=>void}) {
   const [settings,setSettings]=useState(initialSettings);
@@ -21,7 +22,10 @@ export function LibraryPanel({boot,onMount,onChanged,onClose}:{boot:Bootstrap;on
   return <main className="library-page">
     <div className="library-heading"><div><p className="section-meta">interview-rehearsal</p><h1>면접 자료 열기</h1>
       <p className="muted">면접별 자료와 연습 기록을 따로 보관. 한 번에 하나의 면접 사용.</p></div>
-      {onClose&&<Button variant="outline" onClick={onClose}>현재 면접으로</Button>}
+      <div className="header-actions">
+        {onClose&&<Button variant="outline" onClick={onClose}>현재 면접으로</Button>}
+        <ThemeToggle/>
+      </div>
     </div>
     {error&&<p className="notice" role="alert">{error}</p>}
     {notice&&<p role="status">{notice}</p>}
